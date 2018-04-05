@@ -15,7 +15,6 @@ class SignIn extends React.Component {
         firebaseApp;
       }
 
-
       signIn = () =>{
         firebaseApp.auth().signInWithEmailAndPassword(this.state.email,this.state.password)
         .then(res => console.log(res))
@@ -24,8 +23,10 @@ class SignIn extends React.Component {
       }
 
     render() {
+
         return (
-            <View>   
+            <View style={styles.container}> 
+
             <Input       
           placeholder = 'Enter your email ...'
           label = 'Email'
@@ -40,9 +41,12 @@ class SignIn extends React.Component {
           onChangeText = {password => this.setState({password})}
           value = {this.state.password}
           />
+
           <ButtonLog onPress={()=>this.signIn()}>Log in with email</ButtonLog>
           <ButtonReg onPress={()=>this.props.navigation.navigate('SignUpScreen')}>Go to sign up</ButtonReg>
+
           <Text style={styles.textUnderButtom}>Forgot password ?</Text>
+
           </View>
         )
     }
@@ -56,6 +60,14 @@ const styles = StyleSheet.create({
       fontSize: 18,
       fontWeight: 'bold',
       textAlign: 'center',
-  }
+  },
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    backgroundColor:'#FFF',
+    width: '100%',
+    height: '100%',
+  }, 
 })
 export default SignIn;

@@ -25,8 +25,7 @@ class SignUp extends React.Component {
         .catch(err=> console.log(err),err => console.log(err))
       }
 
-    render() {
-        
+    render() {     
         return (
             <View style={styles.container}>
                  {/* <Image
@@ -56,8 +55,13 @@ class SignUp extends React.Component {
 }
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
         backgroundColor:'#FFF',
-      },
+        width: '100%',
+        height: '100%',
+      }, 
     logo:{
         marginTop:10,
         marginBottom:10,
